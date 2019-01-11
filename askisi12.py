@@ -3,10 +3,13 @@
 
 import string
 
-AB = list(string.ascii_uppercase)
+AB = [['' for i in range(2)] for j in range(26)]
+for i in range(26):
+    AB[i][0] = list(string.ascii_uppercase)[i]
+    AB[i][1] = 0
 
 text = input("Please type the text. ")
 text = text.upper()
-print(text)
 
-for i in range(0,26):
+for i in range(26):
+    AB[i][1] = text.count(AB[i][0])
